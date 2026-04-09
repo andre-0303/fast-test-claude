@@ -90,3 +90,5 @@ Skills disponíveis em `.claude/skills/`:
 
 - `add-question`: Adicionar novas questões
 - `validate-json`: Validar questions.json
+
+### Feito por André Bandeira - Software Engineer
