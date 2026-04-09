@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Tests - Plataforma de Avaliação Técnica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fast Tests</h1>
+            <p>Plataforma de questões técnicas para autoavaliação</p>
+        </header>
+
+        <main>
+            <section id="category-selection">
+                <h2>Escolha uma categoria</h2>
+                <div id="category-buttons"></div>
+            </section>
+
+            <section id="quiz-section" class="hidden">
+                <h2 id="quiz-title"></h2>
+                <div id="question-container"></div>
+                <button id="submit-btn" class="btn-primary">Enviar Respostas</button>
+                <div id="result-container" class="hidden"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

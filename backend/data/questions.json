@@ -1,0 +1,106 @@
+{
+  "engenharia-software": [
+    {
+      "id": 1,
+      "pergunta": "Qual é o principal objetivo do modelo em cascata (Waterfall) no desenvolvimento de software?",
+      "opcoes": [
+        "Permitir mudanças frequentes durante o desenvolvimento",
+        "Entregar software funcional em ciclos curtos",
+        "Seguir um processo sequencial e linear de fases",
+        "Priorizar a interação com o cliente sobredocumentação"
+      ],
+      "resposta_correta": "Seguir um processo sequencial e linear de fases",
+      "explicacao": "O modelo Waterfall é caracterizado por suas fases sequenciais: requisitos, design, implementação, teste e manutenção, onde cada fase deve ser concluída antes da próxima começar."
+    },
+    {
+      "id": 2,
+      "pergunta": "Na metodologia Scrum, qual é a responsabilidade do Product Owner?",
+      "opcoes": [
+        "Facilitar as cerimônias do Scrum e remover impedimentos",
+        "Desenvolver o produto e escrever o código",
+        "Maximizar o valor do produto gerenciando o backlog",
+        "Garantir que a equipe siga as práticas do Scrum"
+      ],
+      "resposta_correta": "Maximizar o valor do produto gerenciando o backlog",
+      "explicacao": "O Product Owner é responsável por maximizar o valor do produto resultante do trabalho da equipe de desenvolvimento, gerenciando o Product Backlog."
+    }
+  ],
+  "sql": [
+    {
+      "id": 1,
+      "pergunta": "Qual comando SQL é usado para recuperar dados de uma tabela?",
+      "opcoes": [
+        "GET",
+        "SELECT",
+        "READ",
+        "FETCH"
+      ],
+      "resposta_correta": "SELECT",
+      "explicacao": "O comando SELECT é usado no SQL para consultar e recuperar dados de uma ou mais tabelas."
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual cláusula SQL é usada para filtrar registros após o agrupamento com GROUP BY?",
+      "opcoes": [
+        "WHERE",
+        "HAVING",
+        "FILTER",
+        "WHERE GROUP"
+      ],
+      "resposta_correta": "HAVING",
+      "explicacao": "A cláusula HAVING é usada para filtrar grupos após a aplicação do GROUP BY, enquanto WHERE filtra linhas individuais antes do agrupamento."
+    }
+  ],
+  "docker": [
+    {
+      "id": 1,
+      "pergunta": "Qual é o propósito do Dockerfile?",
+      "opcoes": [
+        "Definir as variáveis de ambiente do container",
+        "Listar todos os containers em execução",
+        "Descrever como construir uma imagem Docker",
+        "Orquestrar múltiplos containers"
+      ],
+      "resposta_correta": "Descrever como construir uma imagem Docker",
+      "explicacao": "Um Dockerfile é um script contendo uma série de comandos e instruções que o Docker executa automaticamente para construir uma nova imagem."
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual comando é usado para iniciar um container Docker a partir de uma imagem?",
+      "opcoes": [
+        "docker build",
+        "docker pull",
+        "docker run",
+        "docker start"
+      ],
+      "resposta_correta": "docker run",
+      "explicacao": "O comando docker run cria e inicia um novo container a partir de uma imagem Docker especificada."
+    }
+  ],
+  "entrevistas-tech": [
+    {
+      "id": 1,
+      "pergunta": "Em uma entrevista técnica, qual é a melhor abordagem quando você não sabe a resposta para uma pergunta?",
+      "opcoes": [
+        "Inventar uma resposta para parecer confiante",
+        "Dizer que não sabe e parar de falar",
+        "Admitir que não sabe, explicar seu raciocínio e oferecer para descobrir",
+        "Mudar de assunto rapidamente"
+      ],
+      "resposta_correta": "Admitir que não sabe, explicar seu raciocínio e oferecer para descobrir",
+      "explicacao": "Entrevistadores valorizam a honestidade e a capacidade de resolver problemas. Mostrar seu processo de pensamento é mais importante do que saber todas as respostas."
+    },
+    {
+      "id": 2,
+      "pergunta": "O que é mais importante demonstrar em uma entrevista de programação?",
+      "opcoes": [
+        "Memorização de algoritmos complexos",
+        "Velocidade de digitação",
+        "Habilidade de resolver problemas e escrever código limpo",
+        "Conhecimento de todas as linguagens de programação"
+      ],
+      "resposta_correta": "Habilidade de resolver problemas e escrever código limpo",
+      "explicacao": "Entrevistas técnicas focam em avaliar suas habilidades de resolução de problemas, pensamento lógico e capacidade de escrever código funcional e mantenível."
+    }
+  ]
+}
