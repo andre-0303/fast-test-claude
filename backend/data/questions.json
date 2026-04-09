@@ -49,6 +49,18 @@
       ],
       "resposta_correta": "HAVING",
       "explicacao": "A cláusula HAVING é usada para filtrar grupos após a aplicação do GROUP BY, enquanto WHERE filtra linhas individuais antes do agrupamento."
+    },
+    {
+      "id": 3,
+      "pergunta": "O que a função COALESCE retorna quando todos os argumentos são NULL?",
+      "opcoes": [
+        "0",
+        "Uma string vazia",
+        "NULL",
+        "FALSE"
+      ],
+      "resposta_correta": "NULL",
+      "explicacao": "COALESCE retorna o primeiro valor não-NULL de seus argumentos. Se todos os argumentos forem NULL, retorna NULL."
     }
   ],
   "docker": [
@@ -113,6 +125,82 @@
       ],
       "resposta_correta": "Habilidade de resolver problemas e escrever código limpo",
       "explicacao": "Entrevistas técnicas focam em avaliar suas habilidades de resolução de problemas, pensamento lógico e capacidade de escrever código funcional e mantenível."
+    }
+  ],
+  "python": [
+    {
+      "id": 1,
+      "pergunta": "Qual é a diferença entre listas e tuplas em Python?",
+      "opcoes": [
+        "Listas são mais rápidas",
+        "Tuplas são imutáveis",
+        "Não há diferença",
+        "Listas usam menos memória"
+      ],
+      "resposta_correta": "Tuplas são imutáveis",
+      "explicacao": "A principal diferença é que listas são mutáveis (podem ser modificadas) enquanto tuplas são imutáveis (não podem ser modificadas após a criação)."
+    },
+    {
+      "id": 2,
+      "pergunta": "O que o método .append() faz em uma lista Python?",
+      "opcoes": [
+        "Remove o último elemento",
+        "Adiciona um elemento ao final",
+        "Ordena a lista",
+        "Inverte a lista"
+      ],
+      "resposta_correta": "Adiciona um elemento ao final",
+      "explicacao": "O método .append() adiciona um elemento ao final da lista, aumentando seu comprimento em 1."
+    },
+    {
+      "id": 3,
+      "pergunta": "Como você cria um dicionário vazio em Python?",
+      "opcoes": [
+        "{}",
+        "[]",
+        "dict()",
+        " Ambas {} e dict()"
+      ],
+      "resposta_correta": " Ambas {} e dict()",
+      "explicacao": "Você pode criar um dicionário vazio usando {} (chaves vazias) ou dict(). Ambos os métodos criam um dicionário vazio."
+    }
+  ],
+  "fundamentos-algoritmos": [
+    {
+      "id": 1,
+      "pergunta": "Qual é a complexidade de tempo do algoritmo de busca binária?",
+      "opcoes": [
+        "O(n)",
+        "O(log n)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "resposta_correta": "O(log n)",
+      "explicacao": "A busca binária tem complexidade O(log n) porque divide o problema pela metade a cada iteração, sendo muito mais eficiente que a busca linear O(n)."
+    },
+    {
+      "id": 2,
+      "pergunta": "O que é uma estrutura de dados pilha (stack)?",
+      "opcoes": [
+        "FIFO - First In First Out",
+        "LIFO - Last In First Out",
+        "Aleatória",
+        "Ordenada por valor"
+      ],
+      "resposta_correta": "LIFO - Last In First Out",
+      "explicacao": "Uma pilha segue o princípio LIFO (Last In First Out), onde o último elemento adicionado é o primeiro a ser removido."
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual é a complexidade de tempo do QuickSort no caso médio?",
+      "opcoes": [
+        "O(n)",
+        "O(n log n)",
+        "O(n²)",
+        "O(log n)"
+      ],
+      "resposta_correta": "O(n log n)",
+      "explicacao": "No caso médio, o QuickSort tem complexidade O(n log n). No pior caso (quando o pivô é sempre o menor ou maior elemento), a complexidade é O(n²)."
     }
   ]
 }

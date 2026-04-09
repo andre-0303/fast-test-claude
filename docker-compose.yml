@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    container_name: fast-tests-backend
+    command: npm run dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - ./backend/data:/app/data
+    networks:
+      - fast-tests-network
+
+  frontend:
+    build: ./frontend
+    container_name: fast-tests-frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
+    networks:
+      - fast-tests-network
+
+networks:
+  fast-tests-network:
+    driver: bridge

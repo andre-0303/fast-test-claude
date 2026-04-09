@@ -10,9 +10,6 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from frontend
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
-
 // API Routes
 app.get('/api/tests', (req, res) => {
   try {
@@ -57,9 +54,9 @@ app.post('/api/results', (req, res) => {
   }
 });
 
-// Serve frontend for any other route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+// Root route for health check
+app.get('/', (req, res) => {
+  res.json({ status: 'Backend is running' });
 });
 
 app.listen(PORT, () => {

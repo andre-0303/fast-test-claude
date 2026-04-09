@@ -9,11 +9,9 @@ class QuizApp {
         this.quizSection = document.getElementById('quiz-section');
         this.quizTitle = document.getElementById('quiz-title');
         this.questionContainer = document.getElementById('question-container');
-        this.submitBtn = document.getElementById('submit-btn');
-        this.resultContainer = document.getElementById('result-container');
         this.backBtn = document.getElementById('back-btn');
+        this.resultContainer = document.getElementById('result-container');
 
-        this.submitBtn.addEventListener('click', () => this.submitAnswers());
         this.backBtn.addEventListener('click', () => this.goBack());
 
         this.loadCategories();
@@ -94,6 +92,8 @@ class QuizApp {
                 radio.name = `question_${question.id}`;
                 radio.value = option;
 
+                radio.addEventListener('change', () => this.checkAutoSubmit());
+
                 const optionText = document.createElement('span');
                 optionText.textContent = option;
 
@@ -163,6 +163,13 @@ class QuizApp {
         this.quizSection.classList.add('hidden');
         this.categorySelection.classList.remove('hidden');
         this.resultContainer.classList.add('hidden');
+    }
+
+    checkAutoSubmit() {
+        const answeredCount = document.querySelectorAll('input[type="radio"]:checked').length;
+        if (answeredCount === this.questions.length) {
+            this.submitAnswers();
+        }
     }
 }
 
