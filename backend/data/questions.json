@@ -75,6 +75,18 @@
       ],
       "resposta_correta": "docker run",
       "explicacao": "O comando docker run cria e inicia um novo container a partir de uma imagem Docker especificada."
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual comando Docker é usado para listar os containers em execução?",
+      "opcoes": [
+        "docker list",
+        "docker ps",
+        "docker show",
+        "docker containers"
+      ],
+      "resposta_correta": "docker ps",
+      "explicacao": "O comando docker ps lista todos os containers em execução. Para listar também os containers parados, usa-se docker ps -a."
     }
   ],
   "entrevistas-tech": [

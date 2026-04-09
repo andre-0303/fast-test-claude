@@ -11,8 +11,10 @@ class QuizApp {
         this.questionContainer = document.getElementById('question-container');
         this.submitBtn = document.getElementById('submit-btn');
         this.resultContainer = document.getElementById('result-container');
+        this.backBtn = document.getElementById('back-btn');
 
         this.submitBtn.addEventListener('click', () => this.submitAnswers());
+        this.backBtn.addEventListener('click', () => this.goBack());
 
         this.loadCategories();
     }
@@ -152,6 +154,12 @@ class QuizApp {
     }
 
     restartQuiz() {
+        this.quizSection.classList.add('hidden');
+        this.categorySelection.classList.remove('hidden');
+        this.resultContainer.classList.add('hidden');
+    }
+
+    goBack() {
         this.quizSection.classList.add('hidden');
         this.categorySelection.classList.remove('hidden');
         this.resultContainer.classList.add('hidden');
