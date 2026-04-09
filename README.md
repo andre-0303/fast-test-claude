@@ -18,7 +18,8 @@ O objetivo é aprender a configurar e usar agentes Claude Code em projetos reais
 - **Backend**: Node.js 18 + Express (porta 3001)
 - **Frontend**: HTML/CSS/JS puro + Nginx (porta 8080)
 - **Infra**: Docker + Docker Compose
-- **Dados**: arquivo JSON (`backend/data/questions.json`)
+- **Dados**: PostgreSQL (porta 5432)
+- **Dados Legado**: arquivo JSON (`backend/data/questions.json`)
 
 ## Como Testar
 
@@ -58,7 +59,7 @@ node server.js
 
 - `GET /api/tests` — Lista categorias disponíveis
 - `GET /api/tests/:category` — Retorna 3-4 questões aleatórias
-- `POST /api/results` — Salva resultado (em memória)
+- `POST /api/results` — Salva resultado no PostgreSQL
 
 ## Estrutura do Projeto
 
@@ -67,14 +68,17 @@ node server.js
 ├── backend/
 │   ├── server.js       # Servidor Express
 │   ├── Dockerfile     # Container Node.js
+│   ├── schema.sql      # Schema PostgreSQL
+│   ├── package.json    # Dependências (pg)
 │   └── data/
-│       └── questions.json
+│       └── questions.json  # Legado
 ├── frontend/
 │   ├── index.html     # Interface principal
 │   ├── app.js        # Frontend JS
 │   ├── Dockerfile    # Container Nginx
 │   └── nginx.conf    # Configuração proxy
 ├── docker-compose.yml
+├── .env              # Variáveis de ambiente
 └── README.md
 ```
 

@@ -9,6 +9,10 @@ services:
       - ./backend:/app
       - /app/node_modules
       - ./backend/data:/app/data
+    depends_on:
+      - postgres
+    env_file:
+      - .env
     networks:
       - fast-tests-network
 
@@ -24,6 +28,24 @@ services:
     networks:
       - fast-tests-network
 
+  postgres:
+    image: postgres:16-alpine
+    container_name: fast-tests-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-fasttest}
+      POSTGRES_USER: ${POSTGRES_USER:-fasttest}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fasttest123}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    networks:
+      - fast-tests-network
+
 networks:
   fast-tests-network:
     driver: bridge
+
+volumes:
+  postgres_data:
