@@ -1,3 +1,10 @@
+const rawBaseUrl = window.FAST_TESTS_API_BASE_URL || '';
+const API_BASE_URL = rawBaseUrl.replace(/\/$/, '');
+
+if (!API_BASE_URL && window.location.hostname === 'andre-0303.github.io') {
+    console.error('FAST_TESTS_API_BASE_URL não configurada. Defina PAGES_API_BASE_URL no GitHub Actions para injetar a URL.');
+}
+
 class QuizApp {
     constructor() {
         this.currentCategory = null;
@@ -19,7 +26,7 @@ class QuizApp {
 
     async loadCategories() {
         try {
-            const response = await fetch('/api/tests');
+            const response = await fetch(`${API_BASE_URL}/api/tests`);
             const categories = await response.json();
             this.displayCategories(categories);
         } catch (error) {
@@ -54,7 +61,7 @@ class QuizApp {
         this.score = 0;
 
         try {
-            const response = await fetch(`/api/tests/${category}`);
+            const response = await fetch(`${API_BASE_URL}/api/tests/${category}`);
             this.questions = await response.json();
             this.displayQuiz();
         } catch (error) {
