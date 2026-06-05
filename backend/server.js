@@ -5,6 +5,24 @@ const { Pool } = require('pg');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const defaultOrigins = [
+  'http://localhost:3001',
+  'http://localhost:8080',
+  'https://andre-0303.github.io',
+];
+const allowedOrigins = (process.env.CORS_ORIGIN || defaultOrigins.join(','))
+  .split(',')
+  .map(origin => origin.trim())
+  .filter(Boolean);
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(null, false);
+  },
+};
+
 const pool = new Pool({
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
@@ -13,7 +31,7 @@ const pool = new Pool({
   password: process.env.POSTGRES_PASSWORD || 'fasttest123',
 });
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/api/tests', async (req, res) => {
