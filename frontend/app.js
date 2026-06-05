@@ -1,8 +1,8 @@
 const rawBaseUrl = window.FAST_TESTS_API_BASE_URL || '';
 const API_BASE_URL = rawBaseUrl.replace(/\/$/, '');
 
-if (!API_BASE_URL && window.location.hostname.endsWith('github.io')) {
-    console.error('FAST_TESTS_API_BASE_URL não configurada. Defina PAGES_API_BASE_URL no GitHub Actions.');
+if (!API_BASE_URL && window.location.hostname === 'andre-0303.github.io') {
+    console.error('FAST_TESTS_API_BASE_URL não configurada. Defina PAGES_API_BASE_URL no GitHub Actions para injetar a URL.');
 }
 
 class QuizApp {

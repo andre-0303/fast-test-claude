@@ -51,7 +51,7 @@ node server.js
 ### Frontend (GitHub Pages)
 
 1. Habilite o GitHub Pages com **GitHub Actions**.
-2. Defina a variável do repositório `PAGES_API_BASE_URL` com a URL pública do backend no Render (ex: `https://fast-test-claude.onrender.com`). Se ficar vazia, o frontend usa o mesmo domínio (ex.: `/api/tests`), o que só funciona em desenvolvimento local quando o frontend e o backend compartilham a mesma origem.
+2. Defina a variável do repositório `PAGES_API_BASE_URL` com a URL pública do backend no Render (ex: `https://fast-test-claude.onrender.com`). Se ficar vazia, o frontend usa o mesmo domínio (ex.: `/api/tests`), o que funciona apenas quando frontend e backend compartilham a mesma origem (ex.: backend servindo o frontend localmente).
 3. O workflow `.github/workflows/pages.yml` publica a pasta `/frontend` quando houver push na branch `main`.
 4. URL do frontend: `https://andre-0303.github.io/fast-test-claude`
 
@@ -63,7 +63,7 @@ node server.js
 4. Configure as variáveis de ambiente no Render:
    - `PORT` (ex: 3001)
    - `DB_HOST`, `DB_PORT`, `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`
-   - `CORS_ORIGIN` (opcional): lista separada por vírgula com origens permitidas. Ao definir, você substitui toda a lista padrão. Por padrão inclui `http://localhost:3001`, `http://localhost:8080` e `https://andre-0303.github.io`. Observação: CORS considera apenas esquema + host (o path `/fast-test-claude` não entra na comparação). Requisições sem header `Origin` são aceitas (ex.: health checks e chamadas server-to-server).
+   - `CORS_ORIGIN` (opcional): lista separada por vírgula com origens permitidas. Ao definir, você substitui toda a lista padrão. Se não definir (ou deixar vazio), usa os padrões: `http://localhost:3001`, `http://localhost:8080` e `https://andre-0303.github.io`. Observação: CORS considera apenas esquema + host (o path `/fast-test-claude` não entra na comparação). Requisições sem header `Origin` são aceitas (ex.: health checks e chamadas server-to-server).
 
 ### Deploy automático do backend
 
