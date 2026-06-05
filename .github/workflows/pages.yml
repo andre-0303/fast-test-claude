@@ -30,9 +30,9 @@ jobs:
           API_BASE_URL: ${{ vars.PAGES_API_BASE_URL }}
         run: |
           if [ -n "$API_BASE_URL" ]; then
-            sed -i "s|__API_BASE_URL__|$API_BASE_URL|g" frontend/config.js
+            sed -i "s|__FAST_TESTS_API_BASE_URL__|$API_BASE_URL|g" frontend/config.js
           else
-            sed -i "s|__API_BASE_URL__||g" frontend/config.js
+            sed -i "s|__FAST_TESTS_API_BASE_URL__||g" frontend/config.js
           fi
       - name: Configure Pages
         uses: actions/configure-pages@v5

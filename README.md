@@ -63,7 +63,7 @@ node server.js
 4. Configure as variáveis de ambiente no Render:
    - `PORT` (ex: 3001)
    - `DB_HOST`, `DB_PORT`, `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`
-   - `CORS_ORIGIN` (opcional): lista separada por vírgula com origens permitidas. Por padrão já inclui `https://andre-0303.github.io`.
+   - `CORS_ORIGIN` (opcional): lista separada por vírgula com origens permitidas. Por padrão inclui `http://localhost:3001`, `http://localhost:8080` e `https://andre-0303.github.io` (CORS usa apenas esquema + host).
 
 ### Deploy automático do backend
 

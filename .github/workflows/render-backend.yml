@@ -7,6 +7,9 @@ on:
       - "backend/**"
       - ".github/workflows/render-backend.yml"
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
