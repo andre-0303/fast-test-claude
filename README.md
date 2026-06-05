@@ -51,7 +51,7 @@ node server.js
 ### Frontend (GitHub Pages)
 
 1. Habilite o GitHub Pages com **GitHub Actions**.
-2. Defina a variável do repositório `PAGES_API_BASE_URL` com a URL pública do backend no Render (ex: `https://fast-test-claude.onrender.com`). Se ficar vazia, o frontend usa caminhos absolutos no próprio domínio (ex.: `/api/tests`), o que é útil em desenvolvimento local.
+2. Defina a variável do repositório `PAGES_API_BASE_URL` com a URL pública do backend no Render (ex: `https://fast-test-claude.onrender.com`). Se ficar vazia, o frontend usa o mesmo domínio (ex.: `/api/tests`), o que só funciona em desenvolvimento local quando o frontend e o backend compartilham a mesma origem.
 3. O workflow `.github/workflows/pages.yml` publica a pasta `/frontend` quando houver push na branch `main`.
 4. URL do frontend: `https://andre-0303.github.io/fast-test-claude`
 

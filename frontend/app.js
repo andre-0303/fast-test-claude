@@ -1,4 +1,9 @@
-const API_BASE_URL = (window.FAST_TESTS_API_BASE_URL || '').replace(/\/$/, '');
+const rawBaseUrl = window.FAST_TESTS_API_BASE_URL || '';
+const API_BASE_URL = rawBaseUrl.replace(/\/$/, '');
+
+if (!API_BASE_URL && window.location.hostname.endsWith('github.io')) {
+    console.error('FAST_TESTS_API_BASE_URL não configurada. Defina PAGES_API_BASE_URL no GitHub Actions.');
+}
 
 class QuizApp {
     constructor() {
